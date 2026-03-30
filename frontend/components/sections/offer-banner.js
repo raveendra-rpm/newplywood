@@ -7,7 +7,7 @@ export default function OfferBanner() {
           <p className="text-xl opacity-90">Special offer for new dealers and bulk project orders this month.</p>
         </div>
         <div className="flex flex-wrap items-center gap-4">
-          <a hred="#contact" className="px-8 py-4 bg-white text-brand-red font-extrabold rounded-md shadow-lg hover:bg-slate-50 transition-all text-lg">
+          <a href="#contact" className="px-8 py-4 bg-white !text-[#e31e24] font-extrabold rounded-md shadow-lg hover:bg-slate-50 transition-all text-lg min-w-[200px] flex items-center justify-center">
             Enquiry Now
           </a>
           <a href="/catalog.pdf" className="px-8 py-4 border-2 border-white text-white font-extrabold rounded-md hover:bg-white/10 transition-all text-lg">

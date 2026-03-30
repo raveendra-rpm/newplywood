@@ -3,55 +3,100 @@
 import { useState } from "react";
 import Image from "next/image";
 import { testimonials, videoTestimonials } from "@/data/site";
-import { Star, Play, Quote } from "lucide-react";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import VideoModal from "@/components/ui/video-modal";
 
 export default function TestimonialsSection() {
   const [activeVideo, setActiveVideo] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
-    <section id="testimonials" className="section-space bg-white">
+    <section id="testimonials" className="section-space bg-white overflow-hidden">
       <div className="container-shell">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="section-kicker">What Users Say About Us</span>
-          <h2 className="h2-title mt-2 font-black uppercase tracking-tighter">Trusted by <span>Industry Professionals</span></h2>
-          <p className="text-slate-600 font-medium">
-            Hear from architects, builders, and dealers who rely on Sailee Plywood for their premium projects.
-          </p>
+        {/* Left Aligned Heading */}
+        <div className="mb-20">
+          <span className="text-red-600 text-sm font-black uppercase tracking-[0.3em] block mb-4">
+            WHAT OUR CUSTOMERS SAY
+          </span>
+          <h2 className="text-5xl md:text-6xl font-extrabold text-slate-800 tracking-tight">
+            Building Trust
+          </h2>
         </div>
 
-        {/* Text Testimonials */}
-        <div className="grid md:grid-cols-2 gap-10 mb-24 transition-all duration-700">
-          {testimonials.map((item, index) => (
-            <div key={index} className="bg-slate-50 p-12 rounded-[2.5rem] border border-slate-100 flex flex-col gap-8 relative group hover:bg-white hover:shadow-2xl transition-all duration-500">
-              <Quote size={64} className="text-brand-red opacity-10 absolute top-12 right-12 group-hover:opacity-30 transition-opacity" />
-              <div className="flex gap-1.5 pt-2">
-                {[...Array(item.rating)].map((_, idx) => (
-                  <Star key={idx} size={20} className="fill-brand-red text-brand-red" />
-                ))}
-              </div>
-              <p className="text-slate-800 text-xl font-bold leading-relaxed italic">
-                "{item.quote}"
-              </p>
-              <div className="flex items-center gap-5 pt-8 border-t border-slate-200">
-                <div className="h-14 w-14 rounded-2xl bg-brand-red flex items-center justify-center text-white font-black text-2xl uppercase shadow-lg shadow-brand-red/30">
-                  {item.name[0]}
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-slate-900 text-lg">{item.name}</h4>
-                  <p className="text-slate-400 text-xs tracking-[0.2em] uppercase font-black">{item.role}</p>
-                </div>
-              </div>
+        {/* Text Testimonials Slider */}
+        <div className="relative mb-32">
+          {/* Navigation Controls - Top Right / Floating Position */}
+          <div className="absolute -top-16 right-0 flex gap-4">
+            <button 
+              onClick={prevSlide}
+              className="h-12 w-12 rounded-full border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-500 hover:border-red-600 hover:text-red-600 transition-all active:scale-95"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="h-12 w-12 rounded-full border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-500 hover:border-red-600 hover:text-red-600 transition-all active:scale-95"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          <div className="transition-all duration-700 flex gap-8">
+            {/* Desktop View: Show 3 (sliding logic simplified for demo, or just mapping all with flex-wrap for now) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+              {testimonials.map((item, index) => {
+                // Determine visibility logic or just show 3 for simplicity if desktop
+                return (
+                  <div 
+                    key={index} 
+                    className="bg-[#F7F7F7] p-10 py-12 rounded-3xl flex flex-col gap-8 relative group hover:shadow-xl transition-all duration-500"
+                  >
+                    {/* Large Red Quotes */}
+                    <div className="text-red-600 leading-none h-8">
+                      <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 30H14.1176L18.8235 18.8235V0H0V30ZM21.1765 30H35.2941L40 18.8235V0H21.1765V30Z" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <p className="text-slate-600 text-lg font-medium leading-relaxed">
+                      {item.quote}
+                    </p>
+
+                    <div className="flex items-center gap-5 pt-4 mt-auto">
+                      <div className="h-16 w-16 rounded-full overflow-hidden bg-slate-200 border-2 border-white shadow-md relative">
+                         {item.avatar ? (
+                            <Image src={item.avatar} alt={item.name} fill className="object-cover" />
+                         ) : (
+                            <div className="h-full w-full flex items-center justify-center font-bold text-slate-400">{item.name[0]}</div>
+                         )}
+                      </div>
+                      <div>
+                        <h4 className="font-extrabold text-slate-900 text-lg">{item.name}</h4>
+                        <p className="text-slate-500 text-sm font-medium">{item.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Video Testimonials */}
-        <div className="pt-20 border-t border-slate-100">
+        {/* Video Testimonials - OUR VALUABLE CUSTOMERS */}
+        <div className="pt-24 border-t border-slate-100">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-black text-slate-900 uppercase tracking-widest inline-block relative px-4">
+            <h3 className="text-3xl font-black text-slate-900 uppercase tracking-widest flex items-center justify-center gap-6">
+               <div className="h-0.5 w-12 bg-slate-100" />
                OUR VALUABLE CUSTOMERS
-               <div className="h-1 w-full bg-brand-red absolute -bottom-4 left-0" />
+               <div className="h-0.5 w-12 bg-slate-100" />
             </h3>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -59,7 +104,7 @@ export default function TestimonialsSection() {
               <div 
                 key={video.id} 
                 onClick={() => setActiveVideo(video.youtubeId)}
-                className="relative aspect-square rounded-[2rem] overflow-hidden group cursor-pointer shadow-xl border-4 border-white transition-all hover:scale-105 active:scale-95"
+                className="relative aspect-[3/4] rounded-3xl overflow-hidden group cursor-pointer shadow-lg transition-all hover:scale-[1.02]"
               >
                 <Image
                   src={video.thumbnail}
@@ -68,12 +113,12 @@ export default function TestimonialsSection() {
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center">
-                  <div className="h-20 w-20 bg-white/20 backdrop-blur-xl rounded-full border-4 border-white/40 flex items-center justify-center group-hover:scale-125 transition-all duration-500 group-hover:bg-brand-red group-hover:border-white shadow-2xl">
-                    <Play size={32} className="text-white fill-current ml-1" />
+                  <div className="h-16 w-16 bg-white/20 backdrop-blur-xl rounded-full border-2 border-white/40 flex items-center justify-center group-hover:scale-110 transition-all duration-500 group-hover:bg-red-600 group-hover:border-white shadow-2xl">
+                    <Play size={24} className="text-white fill-current ml-1" />
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
-                  <p className="text-white text-xs font-black uppercase tracking-[0.2em]">{video.title}</p>
+                  <p className="text-white text-[10px] font-black uppercase tracking-[0.2em] opacity-80 mb-1">{video.title}</p>
                 </div>
               </div>
             ))}

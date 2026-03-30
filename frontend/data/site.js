@@ -206,16 +206,46 @@ export const products = [
 
 export const testimonials = [
   {
-    quote: "The quality of Sailee Plywood is unmatched. We used it for our entire project and the results are fantastic.",
-    name: "Mohit Jain",
-    role: "Architect, Mumbai",
-    rating: 5
+    quote: "CenturyPly has been my trusted plywood partner for many residential and commercial projects over the years. Their plywood quality is unmatched in the Indian market.",
+    name: "Pappu Shaw",
+    role: "Contractor, Kolkata",
+    rating: 5,
+    avatar: "/images/avatar-1.png"
   },
   {
-    quote: "Highly recommended for modular kitchens. The calibrated plywood makes alignment so much easier.",
+    quote: "It's always delightful for me to use a product of centuryply, and I do. They are consistently innovative and provide great support.",
+    name: "Hemant Singh",
+    role: "Interior Designer, Delhi",
+    rating: 5,
+    avatar: "/images/avatar-2.png"
+  },
+  {
+    quote: "I have been using Century Veneers for more than 5 years and have had no reason to complain. The material quality is excellent and customer service is highly commendable.",
+    name: "Purvesh L. Mistry",
+    role: "Architect, Mumbai",
+    rating: 5,
+    avatar: "/images/avatar-3.png"
+  },
+  {
+    quote: "The durability and finish of Sailee Plywood are top-notch. Our clients are always impressed with the final furniture quality.",
+    name: "Mohit Jain",
+    role: "Architect, Mumbai",
+    rating: 5,
+    avatar: "/images/avatar-4.png"
+  },
+  {
+    quote: "As a builder, I prioritize strength and warp-resistance. This plywood delivers on all fronts, especially for modular kitchen setups.",
     name: "Suresh Patel",
     role: "Builder, Ahmedabad",
-    rating: 5
+    rating: 5,
+    avatar: "/images/avatar-5.png"
+  },
+  {
+    quote: "Excellent screw holding capacity and uniform thickness. It makes our job on-site much easier and faster.",
+    name: "Rajesh Kumar",
+    role: "Interior Contractor, Delhi",
+    rating: 5,
+    avatar: "/images/avatar-6.png"
   }
 ];
 
