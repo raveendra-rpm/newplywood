@@ -18,12 +18,54 @@ import {
   PhoneCall
 } from "lucide-react";
 
+export const latestProjects = [
+  {
+    title: "Dream Kids Retreat",
+    category: "Kids Section",
+    image: "/gallery_image_living_room_partition_one_1774937653866.png",
+  },
+  {
+    title: "Luxury Master Wardrobe",
+    category: "Bed Room Interiors",
+    image: "/gallery_image_bedroom_wardrobe_three_1774937693988.png",
+  },
+  {
+    title: "Elegant Oak Dining",
+    category: "Wooden Dining Table",
+    image: "/veneer_product_image_category_five_1774937599398.png",
+  },
+  {
+    title: "Signature Modular Kitchen",
+    category: "Modular Kitchen",
+    image: "/gallery_image_modular_kitchen_two_1774937671617.png",
+  },
+  {
+    title: "Creative Play Area",
+    category: "Kids Section",
+    image: "/gallery_image_office_cabin_four_1774937710687.png",
+  },
+  {
+    title: "Modern Living Wall",
+    category: "Bed Room Interiors",
+    image: "/gallery_image_wall_panelling_six_1774937748225.png",
+  }
+];
+
+export const footerLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms & Condition", href: "#" },
+  { label: "Vision and Mission", href: "#" },
+  { label: "Why Choose Us", href: "#why-choose-us" },
+];
+
 export const siteConfig = {
-  name: "Sailee Plywood",
-  tagline: "Dampness defeated with advanced technology",
-  phone: "+91 99999 00000",
-  email: "info@saileeply.com",
-  address: "Plot No. 123, Plywood Industrial Area, City, State, ZIP",
+  name: "New Ply & Board Center",
+  tagline: "A Group Company",
+  description: "Welcome to New Plywood and Board Center, your premier destination for top-quality wood products.",
+  phone: "+91-8077577221, +91-6392651116",
+  email: "newplyandboardcenter@gmail.com",
+  address: "Christ Nagar, Chandmari Near Up bank of baroda, Varanasi (UP) - 221003",
+  openingHours: "Mon - Sun : 10:00AM to 07:30PM",
   socials: {
     facebook: "#",
     instagram: "#",
@@ -56,12 +98,24 @@ export const heroSlides = [
 ];
 
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Our Plywood", href: "#products" },
-  { label: "Our Gallery", href: "#gallery" },
-  { label: "Story", href: "#about" },
-  { label: "Become Partner", href: "#partner" },
-  { label: "Contact", href: "#contact" }
+  { label: "HOME", href: "/" },
+  { label: "ABOUT US", href: "#about" },
+  { 
+    label: "SERVICES", 
+    href: "#products",
+    subItems: [
+      { label: "WOODEN DOORS AND FRAMES", href: "#products" },
+      { label: "WOODEN WINDOWS AND FRAMES", href: "#products" },
+      { label: "SAGWAN DOORS AND WINDOWS", href: "#products" },
+      { label: "MODULAR KITCHEN", href: "#products" },
+      { label: "BED ROOM INTERIORS", href: "#products" },
+      { label: "LIVING ROOM INTERIORS", href: "#products" },
+      { label: "KIDS SECTION", href: "#products" }
+    ]
+  },
+  { label: "BRANCHES", href: "#partner" },
+  { label: "BLOGS", href: "#blog" },
+  { label: "CONTACT US", href: "#contact" }
 ];
 
 export const heroStats = [
@@ -130,7 +184,7 @@ export const products = [
   {
     key: "plywood",
     title: "Plywood",
-    image: "/images/plywood-range.png",
+    image: "/images/plywood.png",
     description: "High-quality plywood for all your interior and exterior needs.",
     price: "45/sq.ft",
     specs: [
@@ -250,10 +304,55 @@ export const testimonials = [
 ];
 
 export const videoTestimonials = [
-  { id: "1", thumbnail: "/images/video-1.png", title: "Project Walkthrough", youtubeId: "ScMzIvxBSi4" },
-  { id: "2", thumbnail: "/images/video-2.png", title: "Dealer Feedback", youtubeId: "dQw4w9WgXcQ" },
-  { id: "3", thumbnail: "/images/video-3.png", title: "Customer Experience", youtubeId: "ScMzIvxBSi4" },
-  { id: "4", thumbnail: "/images/video-4.png", title: "Factory Tour", youtubeId: "dQw4w9WgXcQ" }
+  { id: "1", thumbnail: "/images/new_plywood_banner.jpeg", title: "Project Walkthrough", youtubeId: "ScMzIvxBSi4" },
+  { id: "2", thumbnail: "/images/new_plywood.jpg", title: "Dealer Feedback", youtubeId: "dQw4w9WgXcQ" },
+  { id: "3", thumbnail: "/images/new_plywood_banner.jpeg", title: "Customer Experience", youtubeId: "ScMzIvxBSi4" },
+  { id: "4", thumbnail: "/images/new_plywood.jpg", title: "Factory Tour", youtubeId: "dQw4w9WgXcQ" }
+];
+
+export const blogPosts = [
+  {
+    id: 1,
+    title: "The Ultimate Guide to Choosing the Right Plywood",
+    image: "/images/new_plywood.jpg",
+    bgColor: "#4F595E"
+  },
+  {
+    id: 2,
+    title: "5 Modern Furniture Designs for Your Living Room",
+    image: "/images/new_plywood_banner.jpeg",
+    bgColor: "#d97706"
+  },
+  {
+    id: 3,
+    title: "Why Termite-Proof Plywood is Essential for Your Home",
+    image: "/images/new_plywood.jpg",
+    bgColor: "#4F595E"
+  },
+  {
+    id: 4,
+    title: "Sustainable Plywood: A Greener Future for Design",
+    image: "/images/new_plywood_banner.jpeg",
+    bgColor: "#d97706"
+  },
+  {
+    id: 5,
+    title: "Modern Office Furniture with Premium Plywood",
+    image: "/images/gallery-4.png",
+    bgColor: "#1E293B"
+  },
+  {
+    id: 6,
+    title: "Designing a Minimalist Kitchen with WPC Boards",
+    image: "/images/gallery-2.png",
+    bgColor: "#4F595E"
+  },
+  {
+    id: 7,
+    title: "The Art of Natural Veneers in Modern Interiors",
+    image: "/images/gallery-5.png",
+    bgColor: "#d97706"
+  }
 ];
 
 export const galleryItems = [

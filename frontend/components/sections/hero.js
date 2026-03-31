@@ -44,13 +44,13 @@ export default function HeroSection() {
       {/* Navigation Arrows */}
       <button 
         onClick={prevSlide} 
-        className="absolute left-12 top-1/2 -translate-y-1/2 hidden lg:flex p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#E31E24] transition-all hover:scale-110 active:scale-95 shadow-2xl z-30"
+        className="absolute left-12 top-1/2 -translate-y-1/2 hidden lg:flex p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#d97706] transition-all hover:scale-110 active:scale-95 shadow-2xl z-30"
       >
         <ChevronLeft size={32} />
       </button>
       <button 
         onClick={nextSlide} 
-        className="absolute right-12 top-1/2 -translate-y-1/2 hidden lg:flex p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#E31E24] transition-all hover:scale-110 active:scale-95 shadow-2xl z-30"
+        className="absolute right-12 top-1/2 -translate-y-1/2 hidden lg:flex p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#d97706] transition-all hover:scale-110 active:scale-95 shadow-2xl z-30"
       >
         <ChevronRight size={32} />
       </button>
