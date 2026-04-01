@@ -91,9 +91,9 @@ export default function QuoteFormSection() {
               </div>
               
               <div className="mt-10">
-                <a href="https://maps.google.com" target="_blank" className="bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-slate-200">
+                <a href="https://maps.google.com" target="_blank" className="bg-slate-900 hover:bg-black !text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-slate-200">
                    Open Map Direction
-                   <ChevronRight size={18} />
+                   <ChevronRight size={18} className="text-white" />
                 </a>
               </div>
             </div>

@@ -2,16 +2,11 @@ import {
   BadgeCheck,
   Droplets,
   Factory,
-  Flame,
-  Hammer,
-  Layers3,
   ShieldCheck,
-  Sofa,
   Trees,
-  Warehouse,
   Zap,
   Maximize,
-  CheckCircle,
+  CheckCircle2,
   Award,
   Users,
   Clock,
@@ -22,32 +17,32 @@ export const latestProjects = [
   {
     title: "Dream Kids Retreat",
     category: "Kids Section",
-    image: "/gallery_image_living_room_partition_one_1774937653866.png",
+    image: "/images/gallery-1.png",
   },
   {
     title: "Luxury Master Wardrobe",
     category: "Bed Room Interiors",
-    image: "/gallery_image_bedroom_wardrobe_three_1774937693988.png",
+    image: "/images/gallery-3.png",
   },
   {
     title: "Elegant Oak Dining",
     category: "Wooden Dining Table",
-    image: "/veneer_product_image_category_five_1774937599398.png",
+    image: "/images/veneer.png",
   },
   {
     title: "Signature Modular Kitchen",
     category: "Modular Kitchen",
-    image: "/gallery_image_modular_kitchen_two_1774937671617.png",
+    image: "/images/gallery-2.png",
   },
   {
     title: "Creative Play Area",
     category: "Kids Section",
-    image: "/gallery_image_office_cabin_four_1774937710687.png",
+    image: "/images/gallery-4.png",
   },
   {
     title: "Modern Living Wall",
     category: "Bed Room Interiors",
-    image: "/gallery_image_wall_panelling_six_1774937748225.png",
+    image: "/images/gallery-6.png",
   }
 ];
 
@@ -72,7 +67,7 @@ export const siteConfig = {
     youtube: "#",
     linkedin: "#"
   },
-  aboutVideoId: "dQw4w9WgXcQ" // Example placeholder
+  aboutVideoId: "#" // Placeholder updated from Rickroll
 };
 
 export const heroSlides = [
@@ -146,7 +141,7 @@ export const whyChooseUs = [
   {
     title: "Borer Free",
     description: "Special chemical treatment makes our plywood 100% borer and termite proof.",
-    icon: CheckCircle
+    icon: CheckCircle2
   },
   {
     title: "Maximum Hardness",
@@ -171,7 +166,7 @@ export const whyChooseUs = [
   {
     title: "Smooth Finish",
     description: "Ready-to-use smooth surface perfect for laminates and veneers.",
-    icon: CheckCircle
+    icon: CheckCircle2
   },
   {
     title: "Calibrated",
@@ -304,10 +299,10 @@ export const testimonials = [
 ];
 
 export const videoTestimonials = [
-  { id: "1", thumbnail: "/images/new_plywood_banner.jpeg", title: "Project Walkthrough", youtubeId: "ScMzIvxBSi4" },
-  { id: "2", thumbnail: "/images/new_plywood.jpg", title: "Dealer Feedback", youtubeId: "dQw4w9WgXcQ" },
-  { id: "3", thumbnail: "/images/new_plywood_banner.jpeg", title: "Customer Experience", youtubeId: "ScMzIvxBSi4" },
-  { id: "4", thumbnail: "/images/new_plywood.jpg", title: "Factory Tour", youtubeId: "dQw4w9WgXcQ" }
+    { id: "1", thumbnail: "/images/new_plywood_banner.jpeg", title: "Project Walkthrough", youtubeId: "#" },
+    { id: "2", thumbnail: "/images/new_plywood.jpg", title: "Dealer Feedback", youtubeId: "#" },
+    { id: "3", thumbnail: "/images/new_plywood_banner.jpeg", title: "Customer Experience", youtubeId: "#" },
+    { id: "4", thumbnail: "/images/new_plywood.jpg", title: "Factory Tour", youtubeId: "#" }
 ];
 
 export const blogPosts = [

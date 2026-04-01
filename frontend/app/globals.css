@@ -45,6 +45,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-raleway), sans-serif;
   line-height: 1.6;
+  font-variant-numeric: lining-nums;
 }
 
 a {

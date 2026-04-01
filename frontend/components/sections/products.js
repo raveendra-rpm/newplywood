@@ -29,7 +29,7 @@ export default function ProductRangeSection() {
                 onClick={() => setActiveTab(product.key)}
                 className={`flex items-center justify-between p-5 rounded-2xl font-black transition-all border-2 text-left group ${
                   activeTab === product.key
-                    ? "bg-brand-red border-brand-red text-white shadow-2xl translate-x-4"
+                    ? "bg-brand-red border-brand-red text-white shadow-2xl lg:translate-x-4"
                     : "bg-white border-slate-100 text-slate-500 hover:border-brand-red/40 hover:text-brand-red hover:bg-slate-50"
                 }`}
               >
