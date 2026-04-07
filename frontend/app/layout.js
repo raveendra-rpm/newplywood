@@ -2,6 +2,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/layout/topbar";
 import FloatingSidebar from "@/components/ui/floating-sidebar";
+import ScrollToTop from "@/components/ui/scroll-to-top";
 import { siteConfig } from "@/data/site";
 
 const raleway = Raleway({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <Topbar />
         <FloatingSidebar />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

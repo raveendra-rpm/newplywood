@@ -20,12 +20,12 @@ export default function Footer() {
         {/* Column 1: Company Logo & Info */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <a href="/" className="inline-block relative h-18 w-56 md:h-32 md:w-80 bg-white p-5 rounded-2xl transition-transform hover:scale-105 duration-300 shadow-xl shadow-white/5">
+            <a href="/" className="inline-block relative h-14 w-40 md:h-20 md:w-56 bg-white p-3 rounded-xl transition-transform hover:scale-105 duration-300 shadow-xl shadow-white/5">
               <Image
                 src="/images/new_plywood_logo.png"
                 alt={siteConfig.name}
                 fill
-                className="object-contain p-2"
+                className="object-contain p-1"
               />
             </a>
           </div>
@@ -129,13 +129,8 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="container-shell mt-24 pt-10 border-t border-slate-900/50 flex flex-col md:flex-row justify-between items-center gap-6 text-xs uppercase tracking-widest font-bold text-slate-500">
-        <p>© 2026 {siteConfig.name}. Designed with excellence.</p>
-        <div className="flex gap-10">
-          <a href="#" className="hover:text-brand-red transition-colors">Privacy</a>
-          <a href="#" className="hover:text-brand-red transition-colors">Terms</a>
-          <a href="#" className="hover:text-brand-red transition-colors">Cookies</a>
-        </div>
+      <div className="container-shell mt-24 pt-10 border-t border-slate-900/50 flex flex-col md:flex-row justify-center items-center text-xs uppercase tracking-widest font-bold text-slate-500">
+        <p>© 2026 {siteConfig.name}. All Rights Reserved.</p>
       </div>
     </footer>
   );

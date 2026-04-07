@@ -3,12 +3,12 @@ import { siteConfig } from "@/data/site";
 
 export default function Topbar() {
   return (
-    <div className="bg-slate-900/95 text-white py-3 hidden md:block border-b border-white/5 font-sans">
+    <div className="bg-slate-900/95 text-white py-4 hidden md:block border-b border-white/5 font-sans">
       <div className="container-shell flex justify-between items-center text-[12px] font-bold tracking-[0.05em]">
         <div className="flex items-center gap-10">
           <a href={`tel:${siteConfig.phone.split(',')[0].trim()}`} className="flex items-center gap-2.5 hover:text-brand-red transition-colors group">
             <Phone size={14} className="text-brand-red group-hover:scale-110 transition-transform" />
-            <span className="opacity-90 font-medium font-sans antialiased">{siteConfig.phone}</span>
+            <span className="opacity-90 font-medium font-sans antialiased text-slate-300">Call Now: {siteConfig.phone}</span>
           </a>
           <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2.5 hover:text-brand-red transition-colors group">
             <Mail size={14} className="text-brand-red group-hover:scale-110 transition-transform" />

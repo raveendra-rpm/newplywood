@@ -59,7 +59,12 @@ img {
 }
 
 .container-shell {
-  width: min(1280px, calc(100% - 2.5rem));
+  width: min(1280px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.container-nav {
+  width: min(1536px, calc(100% - 2.5rem));
   margin-inline: auto;
 }
 

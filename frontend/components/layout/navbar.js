@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { navLinks, siteConfig } from "@/data/site";
+import { navLinks, siteConfig, services, products } from "@/data/site";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,10 +31,10 @@ export default function Navbar() {
   return (
     <>
       <header className={`sticky top-0 z-[1000] border-b border-slate-100 ${isMenuOpen ? 'bg-white' : 'bg-white/95 backdrop-blur-xl'} transition-all duration-300`}>
-        <div className="container-shell flex h-24 items-center justify-between gap-6">
+        <div className="container-nav flex h-24 items-center justify-between gap-6">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group relative z-[2011]" onClick={closeMenu}>
-            <div className="relative h-16 w-60 sm:h-18 sm:w-72 md:h-20 md:w-80 transition-transform group-hover:scale-105 duration-300">
+            <div className="relative h-12 w-40 sm:h-14 sm:w-48 md:h-16 md:w-56 lg:h-14 lg:w-48 xl:h-16 xl:w-56 2xl:h-20 2xl:w-80 transition-transform group-hover:scale-105 duration-300">
               <Image
                 src="/images/new_plywood_logo.png"
                 alt={siteConfig.name}
@@ -46,13 +46,13 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-10 lg:flex h-full">
+          <nav className="hidden items-center gap-4 xl:gap-6 2xl:gap-10 lg:flex h-full">
             {navLinks.map((link) => (
               <div key={link.label} className="relative h-full flex items-center group/nav">
                 <div className="relative py-2">
                   <a
                     href={link.href}
-                    className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-800 transition hover:text-brand-red flex items-center gap-1"
+                    className="text-[11px] xl:text-[12px] 2xl:text-[13px] font-bold uppercase tracking-[0.1em] xl:tracking-[0.15em] 2xl:tracking-[0.2em] text-slate-800 transition hover:text-brand-red flex items-center gap-1"
                   >
                     {link.label}
                     {link.subItems && <ChevronRight size={14} className="rotate-90 text-slate-400" />}
@@ -62,29 +62,76 @@ export default function Navbar() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover/nav:w-full"></span>
                 </div>
 
-                {/* Dropdown Menu */}
-                {link.subItems && (
-                  <div className="absolute top-[80px] left-[-20px] w-72 bg-white border border-slate-100 py-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:pointer-events-auto transition-all duration-300">
-                    {link.subItems.map((sub) => (
-                      <a
-                        key={sub.label}
-                        href={sub.href}
-                        className="block px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-600 hover:text-brand-red hover:bg-slate-50 transition-colors border-l-2 border-transparent hover:border-brand-red"
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
+                  {/* Standard Dropdown or Mega Menu */}
+                  {link.subItems && (
+                    <>
+                      {link.isMegaMenu ? (
+                        /* === MEGA MENU (SERVICES & PRODUCTS) === */
+                        <div className="absolute top-[80px] left-1/2 -translate-x-1/2 w-[90vw] max-w-7xl bg-white border border-slate-100 p-8 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:pointer-events-auto transition-all duration-300 rounded-3xl">
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {(link.label === "PRODUCTS" ? products : services).map((item) => (
+                              <a
+                                key={item.key}
+                                href={`/${link.label.toLowerCase()}/${item.key}`}
+                                onClick={closeMenu}
+                                className="group/item flex flex-col gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1"
+                              >
+                                <div className="relative h-32 w-full rounded-xl overflow-hidden shadow-inner">
+                                  <Image
+                                    src={item.heroImage || item.image}
+                                    alt={item.title}
+                                    fill
+                                    className="object-cover group-hover/item:scale-110 transition-transform duration-500"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                                </div>
+                                <div>
+                                  <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-900 mb-1 group-hover/item:text-brand-red transition-colors flex items-center justify-between">
+                                    {item.title}
+                                    <ChevronRight size={14} className="opacity-0 group-hover/item:opacity-100 -translate-x-2 group-hover/item:translate-x-0 transition-all" />
+                                  </h4>
+                                  <p className="text-[10px] text-slate-500 line-clamp-2 leading-relaxed font-medium">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                          
+                          <div className="mt-8 pt-6 border-t border-slate-50 flex items-center justify-between">
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                              {link.label === "PRODUCTS" ? "Premium Wood Solutions • Engineered for Strength" : "Expertly Crafted Solutions • Guaranteed Quality"}
+                            </p>
+                            <a href="#contact" className="text-[10px] font-black text-brand-red uppercase tracking-widest hover:underline">
+                              {link.label === "PRODUCTS" ? "View Full Catalog →" : "Book Free Consultation →"}
+                            </a>
+                          </div>
+                        </div>
+                      ) : (
+                        /* === STANDARD DROPDOWN (BRANCHES, etc.) === */
+                        <div className="absolute top-[80px] left-[-20px] w-72 bg-white border border-slate-100 py-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:pointer-events-auto transition-all duration-300 rounded-xl">
+                          {link.subItems.map((sub) => (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              className="block px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-600 hover:text-brand-red hover:bg-slate-50 transition-colors border-l-2 border-transparent hover:border-brand-red"
+                            >
+                              {sub.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
+            </nav>
 
           {/* Desktop Action & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <a
-              href="#contact"
-              className="hidden sm:flex px-6 py-2.5 bg-brand-red !text-white text-sm font-black uppercase tracking-widest rounded-xl hover:bg-black transition-all shadow-xl shadow-brand-red/20 active:scale-95"
+              href="/contact"
+              className="hidden sm:flex px-4 xl:px-6 py-2.5 bg-[#b45309] !text-white text-[11px] xl:text-xs 2xl:text-sm font-black uppercase tracking-widest rounded-xl hover:bg-black transition-all shadow-xl shadow-[#b45309]/20 active:scale-95"
             >
               Enquiry
             </a>
@@ -155,18 +202,40 @@ export default function Navbar() {
                 {/* Mobile Subitems (Accordion) */}
                 {link.subItems && (
                   <div 
-                    className={`overflow-hidden transition-all duration-300 bg-slate-50 ${mobileExpanded === link.label ? 'max-h-[500px] py-4' : 'max-h-0'}`}
+                    className={`overflow-hidden transition-all duration-300 bg-slate-50 ${mobileExpanded === link.label ? 'max-h-[800px] py-4' : 'max-h-0'}`}
                   >
-                    {link.subItems.map((sub) => (
-                      <a
-                        key={sub.label}
-                        href={sub.href}
-                        onClick={closeMenu}
-                        className="block px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 border-l border-brand-red/30 hover:text-brand-red"
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    {link.isMegaMenu ? (
+                      /* Mobile Grid (Services & Products) */
+                      <div className="px-6 grid grid-cols-1 gap-2">
+                        {(link.label === "PRODUCTS" ? products : services).map((item) => (
+                          <a
+                            key={item.key}
+                            href={`/${link.label.toLowerCase()}/${item.key}`}
+                            onClick={closeMenu}
+                            className="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
+                          >
+                            <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-slate-50">
+                              <Image src={item.heroImage || item.image} alt={item.title} fill className="object-cover" />
+                            </div>
+                            <span className="text-[10px] font-black uppercase tracking-wider text-slate-700 leading-tight">
+                              {item.title}
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      /* Standard Mobile List */
+                      link.subItems.map((sub) => (
+                        <a
+                          key={sub.label}
+                          href={sub.href}
+                          onClick={closeMenu}
+                          className="block px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 border-l border-brand-red/30 hover:text-brand-red"
+                        >
+                          {sub.label}
+                        </a>
+                      ))
+                    )}
                   </div>
                 )}
               </div>
@@ -176,9 +245,9 @@ export default function Navbar() {
           {/* Mobile Action */}
           <div className={`mt-auto pt-4 transition-all duration-700 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <a
-              href="#contact"
+              href="/contact"
               onClick={closeMenu}
-              className="flex w-full py-4 bg-brand-red !text-white text-center justify-center items-center rounded-xl font-black uppercase tracking-widest text-base shadow-2xl shadow-brand-red/30 active:scale-95"
+              className="flex w-full py-4 bg-[#b45309] !text-white text-center justify-center items-center rounded-xl font-black uppercase tracking-widest text-base shadow-2xl shadow-[#b45309]/30 active:scale-95"
             >
               Start Enquiry
             </a>

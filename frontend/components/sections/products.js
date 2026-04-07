@@ -29,7 +29,7 @@ export default function ProductRangeSection() {
                 onClick={() => setActiveTab(product.key)}
                 className={`flex items-center justify-between p-5 rounded-2xl font-black transition-all border-2 text-left group ${
                   activeTab === product.key
-                    ? "bg-brand-red border-brand-red text-white shadow-2xl lg:translate-x-4"
+                    ? "bg-brand-red border-brand-red text-white shadow-sm lg:translate-x-4"
                     : "bg-white border-slate-100 text-slate-500 hover:border-brand-red/40 hover:text-brand-red hover:bg-slate-50"
                 }`}
               >
@@ -55,7 +55,7 @@ export default function ProductRangeSection() {
             <div className="flex flex-col gap-8 md:gap-12 relative z-10">
               {/* Top: Full Width Featured Image */}
               <div className="relative group w-full" key={activeProduct.key}>
-                <div className="aspect-[16/8] md:aspect-[21/9] bg-white rounded-2xl md:rounded-[2.5rem] border-[6px] md:border-[12px] border-white shadow-xl overflow-hidden relative mx-auto motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in duration-700">
+                <div className="aspect-[16/8] md:aspect-[21/9] bg-white rounded-2xl md:rounded-[2.5rem] border-[6px] md:border-[12px] border-white shadow-sm overflow-hidden relative mx-auto motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in duration-700">
                   <Image
                     src={activeProduct.image}
                     alt={activeProduct.title}

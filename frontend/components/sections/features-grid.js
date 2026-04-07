@@ -3,12 +3,33 @@
 import { useState } from "react";
 import { whyChooseUs } from "@/data/site";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { 
+  ArrowRight, 
+  Trees, 
+  Maximize, 
+  CheckCircle2, 
+  Award, 
+  Droplets, 
+  Zap, 
+  ShieldCheck, 
+  Factory 
+} from "lucide-react";
+
+const iconMap = {
+  Trees,
+  Maximize,
+  CheckCircle2,
+  Award,
+  Droplets,
+  Zap,
+  ShieldCheck,
+  Factory
+};
 
 export default function FeaturesGrid() {
   const [activeTab, setActiveTab] = useState(0);
   const activeFeature = whyChooseUs[activeTab];
-  const IconComponent = activeFeature?.icon;
+  const IconComponent = iconMap[activeFeature?.icon];
 
   return (
     <section className="section-space bg-white overflow-hidden" id="why-choose-us">
@@ -22,7 +43,7 @@ export default function FeaturesGrid() {
             ADVANCED PERFORMANCE BY DESIGN
           </span>
           <p className="text-slate-600 text-lg max-w-2xl">
-            Every sheet of Sailee Plywood is engineered to deliver maximum durability, finish, and stability through innovation and craft.
+            Every sheet of New Plywood and Board Center is engineered to deliver maximum durability, finish, and stability through innovation and craft.
           </p>
         </div>
 
@@ -82,13 +103,6 @@ export default function FeaturesGrid() {
                 <ArrowRight size={20} />
               </button>
             </div>
-          </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute bottom-8 right-8 hidden md:block opacity-30">
-            <span className="text-8xl font-black text-white select-none">
-              SAILEE
-            </span>
           </div>
         </div>
       </div>

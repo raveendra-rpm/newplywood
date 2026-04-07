@@ -91,19 +91,7 @@ export default function LatestProjects({ showFilters = true, limit = 6 }) {
             </div>
           ))}
         </div>
-
-        {/* View All Projects Button - Links to /projects */}
-        {!showFilters && (
-          <div className="mt-16 flex justify-center">
-             <Link href="/projects" className="group relative overflow-hidden px-10 py-5 bg-slate-950 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-sm shadow-2xl hover:shadow-orange-500/20 active:scale-95 transition-all">
-               <span className="relative z-20 flex items-center justify-center gap-3 text-white">
-                 <span>View All Projects</span>
-                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-2 flex-shrink-0" />
-               </span>
-               <div className="absolute inset-0 bg-orange-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 z-10" />
-             </Link>
-          </div>
-        )}
+        
       </div>
     </section>
   );

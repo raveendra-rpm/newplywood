@@ -47,7 +47,7 @@ export default function QuoteFormSection() {
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
           {/* Left Column: Contact Details */}
           <div className="space-y-10 order-2 lg:order-1">
-            <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl relative overflow-hidden group">
+            <div className="bg-white p-8 rounded-[2rem] border border-slate-100 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-125 transition-transform duration-700 text-brand-red">
                 <MapPin size={100} />
               </div>
@@ -91,7 +91,7 @@ export default function QuoteFormSection() {
               </div>
               
               <div className="mt-10">
-                <a href="https://maps.google.com" target="_blank" className="bg-slate-900 hover:bg-black !text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-slate-200">
+                <a href="https://maps.google.com" target="_blank" className="bg-slate-900 hover:bg-black !text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all">
                    Open Map Direction
                    <ChevronRight size={18} className="text-white" />
                 </a>
@@ -100,7 +100,7 @@ export default function QuoteFormSection() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 shadow-2xl order-1 lg:order-2">
+          <div className="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 order-1 lg:order-2">
             <h3 className="text-2xl font-black text-slate-900 mb-8 uppercase tracking-widest text-center md:text-left text-left">Inquiry Form</h3>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               <div className="space-y-2">
@@ -110,7 +110,7 @@ export default function QuoteFormSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-red transition-all" 
-                  placeholder="Ex: John Doe" 
+                  placeholder="Ex: Rahul Rawat" 
                   required
                 />
               </div>
@@ -121,7 +121,7 @@ export default function QuoteFormSection() {
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-red transition-all" 
-                  placeholder="Ex: +91 98765 43210" 
+                  placeholder="Ex: +91-8077577221" 
                   required
                 />
               </div>
@@ -132,7 +132,7 @@ export default function QuoteFormSection() {
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-red transition-all" 
-                  placeholder="Ex: jdoe@email.com" 
+                  placeholder="Ex: newplyandboardcenter@gmail.com" 
                   required
                 />
               </div>
@@ -143,7 +143,7 @@ export default function QuoteFormSection() {
                   value={formData.zip}
                   onChange={(e) => setFormData({...formData, zip: e.target.value})}
                   className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-brand-red transition-all" 
-                  placeholder="Ex: 382010" 
+                  placeholder="Ex: 221003" 
                   required
                 />
               </div>
@@ -174,7 +174,7 @@ export default function QuoteFormSection() {
                 <button 
                    type="submit" 
                    disabled={status === "submitting"}
-                   className="w-full btn-primary py-5 text-xl flex items-center justify-center gap-3 shadow-xl disabled:bg-slate-400 group"
+                   className="w-full btn-primary py-5 text-xl flex items-center justify-center gap-3 disabled:bg-slate-400 group"
                 >
                   {status === "submitting" ? "Sending..." : status === "success" ? "Message Sent!" : "Submit Your Inquiry"}
                   <Send size={24} className="group-hover:translate-x-3 transition-transform" />
