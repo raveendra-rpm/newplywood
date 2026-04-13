@@ -46,7 +46,7 @@ export const siteConfig = {
   name: "New Plywoods and Board Center",
   tagline: "A Group Company",
   description: "Welcome to New Plywoods and Board Center, your premier destination for top-quality wood products.",
-  phone: "+91-8077577221, +91-6392651116",
+  phone: "+91-8077577221",
   email: "newplyandboardcenter@gmail.com",
   address: "Christ Nagar, Chandmari Near Up bank of baroda, Varanasi (UP) - 221003",
   openingHours: "Mon - Sun : 10:00AM to 07:30PM",
@@ -64,7 +64,8 @@ export const heroSlides = [
     id: 1,
     title: "Dampness defeated with advanced technology",
     subtitle: "Sailee Plywood manufactures high-performance boards for architects and designers.",
-    image: "/images/new_plywood.jpg",
+    image: "/images/new_plywood_one.jpg",
+    mobileImage: "/images/new_plywood_one_mob.png",
     cta: "Enquiry Now",
     secondaryCta: "Learn More",
     theme: "light"
@@ -73,11 +74,22 @@ export const heroSlides = [
     id: 2,
     title: "BUILDING DREAMS STRENGTH IN EVERY LAYER",
     subtitle: "Premium hardwood core engineered for extreme durability and finish.",
-    image: "/images/new_plywood_banner.jpeg",
+    image: "/images/new_plywood_two.jpeg",
+    mobileImage: "/images/new_plywood_two_mob.png",
     cta: "View Catalog",
     secondaryCta: "Our Factory",
     theme: "dark",
     highlights: ["Quality Finishing", "Engineered Wood", "Excellent durability"]
+  },
+  {
+    id: 3,
+    title: "Quality that speaks for itself",
+    subtitle: "Discover our premium range of plywood and boards.",
+    image: "/images/new_plywood_three.png",
+    mobileImage: "/images/new_plywood_three_mob.png",
+    cta: "Contact Us",
+    secondaryCta: "View Products",
+    theme: "light"
   }
 ];
 

@@ -33,15 +33,21 @@ export default function Navbar() {
       <header className={`sticky top-0 z-[1000] border-b border-slate-100 ${isMenuOpen ? 'bg-white' : 'bg-white/95 backdrop-blur-xl'} transition-all duration-300`}>
         <div className="container-nav flex h-24 items-center justify-between gap-6">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group relative z-[2011]" onClick={closeMenu}>
-            <div className="relative h-12 w-40 sm:h-14 sm:w-48 md:h-16 md:w-56 lg:h-14 lg:w-48 xl:h-16 xl:w-56 2xl:h-20 2xl:w-80 transition-transform group-hover:scale-105 duration-300">
-              <Image
-                src="/images/new_plywood_logo.png"
-                alt={siteConfig.name}
-                fill
-                className="object-contain"
-                priority
-              />
+          <a href="/" className="flex items-center gap-2 group relative z-[2011]" onClick={closeMenu}>
+            <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl shadow-sm px-2 py-1.5 transition-transform group-hover:scale-105 duration-300">
+              <div className="relative h-10 w-10 sm:h-11 sm:w-11 shrink-0">
+                <Image
+                  src="/images/new_plywood_logo.png"
+                  alt={siteConfig.name}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="leading-tight">
+                <p className="text-[11px] sm:text-[12px] font-black text-slate-900 whitespace-nowrap">New ply &</p>
+                <p className="text-[11px] sm:text-[12px] font-black text-slate-900 whitespace-nowrap">Board Center</p>
+              </div>
             </div>
           </a>
 
@@ -156,14 +162,20 @@ export default function Navbar() {
       >
         {/* Mobile Overlay Header */}
         <div className="flex h-20 items-center justify-between px-5 md:px-10 border-b border-slate-100">
-          <a href="/" className="flex items-center gap-3" onClick={closeMenu}>
-            <div className="relative h-14 w-52 sm:h-16 sm:w-64">
-              <Image
-                src="/images/new_plywood_logo.png"
-                alt={siteConfig.name}
-                fill
-                className="object-contain"
-              />
+          <a href="/" className="flex items-center gap-2" onClick={closeMenu}>
+            <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl shadow-sm px-2 py-1.5">
+              <div className="relative h-11 w-11 shrink-0">
+                <Image
+                  src="/images/new_plywood_logo.png"
+                  alt={siteConfig.name}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="leading-tight">
+                <p className="text-[12px] font-black text-slate-900 whitespace-nowrap">New ply &</p>
+                <p className="text-[12px] font-black text-slate-900 whitespace-nowrap">Board Center</p>
+              </div>
             </div>
           </a>
           <button

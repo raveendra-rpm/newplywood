@@ -20,13 +20,19 @@ export default function Footer() {
         {/* Column 1: Company Logo & Info */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <a href="/" className="inline-block relative h-14 w-40 md:h-20 md:w-56 bg-white p-3 rounded-xl transition-transform hover:scale-105 duration-300 shadow-xl shadow-white/5">
-              <Image
-                src="/images/new_plywood_logo.png"
-                alt={siteConfig.name}
-                fill
-                className="object-contain p-1"
-              />
+            <a href="/" className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl shadow-sm px-2 py-1.5 transition-transform hover:scale-105 duration-300">
+              <div className="relative h-11 w-11 shrink-0">
+                <Image
+                  src="/images/new_plywood_logo.png"
+                  alt={siteConfig.name}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="leading-tight">
+                <p className="text-[12px] font-black text-slate-900 whitespace-nowrap">New ply &</p>
+                <p className="text-[12px] font-black text-slate-900 whitespace-nowrap">Board Center</p>
+              </div>
             </a>
           </div>
           

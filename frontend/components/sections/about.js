@@ -10,12 +10,11 @@ export default function AboutSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   const points = [
-    "5+ Exclusive Franchise Stores",
-    "Largest Plywood Chain in UP",
-    "High-Performance Wood Tech",
-    "Life-Time Product Guarantee",
-    "Team of Master Designers",
-    "Honest Advice, Real Value"
+    "We have more than 5+ stores.",
+    "largest plywood chain in Uttar Pradesh.",
+    "We use only high-quality plywood",
+    "We have a team of top interior designers and architects",
+    "excellent service and guarantees to build customer trust"
   ];
 
   return (
@@ -42,10 +41,10 @@ export default function AboutSection() {
               </h2>
               
               <p className="text-slate-600 text-xl font-medium leading-relaxed max-w-xl">
-                We are more than just manufacturers. We are curators of strength and beauty, 
-                blending <span className="text-slate-900 font-bold underline decoration-brand-red/30 underline-offset-4">advanced technology</span> 
-                with premium raw materials to engineer wood that defines generations of interiors.
+               Where Premium Quality Meets Architectural Excellence. Join UP's most trusted plywood network with <span className="text-slate-900 font-bold underline decoration-brand-red/30 underline-offset-4">5+ locations. </span> 
+              Backed by elite designers, we don't just build interiors—we craft legacies of durability and trust
               </p>
+               
             </div>
 
             <div className="grid sm:grid-cols-2 gap-y-6 gap-x-8">
@@ -75,7 +74,7 @@ export default function AboutSection() {
                 <div className="flex -space-x-4">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="h-12 w-12 rounded-full border-4 border-[#fff7ed] bg-slate-200 overflow-hidden relative">
-                      <Image src={`/images/avatar-${i}.png`} alt="Client" fill className="object-cover" />
+                      <Image src={`/images/indian-avatar-${i}.png`} alt="Client" fill className="object-cover" />
                     </div>
                   ))}
                 </div>

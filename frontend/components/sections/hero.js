@@ -27,13 +27,26 @@ export default function HeroSection() {
             index === current ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
           }`}
         >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            className="object-cover"
-            priority={index === 0}
-          />
+          {/* Desktop Image */}
+          <div className="hidden md:block absolute inset-0">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+          {/* Mobile Image */}
+          <div className="block md:hidden absolute inset-0">
+            <Image
+              src={slide.mobileImage || slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
           {/* Dimming overlay removed for maximum clarity of background image */}
           
           {/* Text overlays removed as per user request to show background image content clearly */}
@@ -41,19 +54,21 @@ export default function HeroSection() {
         </div>
       ))}
 
-      {/* Navigation Arrows */}
-      <button 
-        onClick={prevSlide} 
-        className="absolute left-12 top-1/2 -translate-y-1/2 hidden lg:flex p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#d97706] transition-all hover:scale-110 active:scale-95 shadow-2xl z-30"
-      >
-        <ChevronLeft size={32} />
-      </button>
-      <button 
-        onClick={nextSlide} 
-        className="absolute right-12 top-1/2 -translate-y-1/2 hidden lg:flex p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#d97706] transition-all hover:scale-110 active:scale-95 shadow-2xl z-30"
-      >
-        <ChevronRight size={32} />
-      </button>
+      {/* Navigation Arrows - Moved to bottom left and hidden on mobile */}
+      <div className="absolute bottom-12 left-12 hidden md:flex items-center gap-4 z-30">
+        <button 
+          onClick={prevSlide} 
+          className="p-3 md:p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#d97706] transition-all hover:scale-110 active:scale-95 shadow-2xl"
+        >
+          <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+        </button>
+        <button 
+          onClick={nextSlide} 
+          className="p-3 md:p-4 bg-white/90 hover:bg-white backdrop-blur-xl border-2 border-white/20 rounded-full text-[#d97706] transition-all hover:scale-110 active:scale-95 shadow-2xl"
+        >
+          <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+        </button>
+      </div>
 
       {/* Progress Dots */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-30">
