@@ -95,7 +95,7 @@ export const heroSlides = [
 
 export const navLinks = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "#about" },
+  { label: "ABOUT US", href: "/about" },
   { 
     label: "SERVICES", 
     href: "#",
